@@ -12,9 +12,10 @@ const Terminal = () => {
 
   return (
     <div
-      className="rounded-xl shadow-2xl mx-auto mt-16 select-text"
+      className="rounded-xl shadow-2xl mx-auto mt-16 select-text max-w-full"
       style={{
         width: '700px',
+        maxWidth: '100%',
         height: '450px',
         background:
           'linear-gradient(135deg, rgba(18,163,135,0.95) 0%, rgba(11,85,69,0.85) 100%)',
@@ -25,10 +26,13 @@ const Terminal = () => {
         display: 'flex',
         flexDirection: 'column',
       }}
+      role="region"
+      aria-label="Interactive coding terminal"
+      tabIndex={-1}
     >
       {/* Barre titre */}
-      <div
-        className="flex items-center space-x-3 px-4 py-2"
+      <header
+        className="flex items-center space-x-3 px-4 py-2 select-none"
         style={{
           backgroundColor: 'rgba(0,0,0,0.15)',
           borderTopLeftRadius: '12px',
@@ -36,21 +40,30 @@ const Terminal = () => {
         }}
       >
         <div className="flex space-x-2">
-          <span className="w-4 h-4 bg-[#ff5f56] rounded-full shadow-md"></span>
-          <span className="w-4 h-4 bg-[#ffbd2e] rounded-full shadow-md"></span>
-          <span className="w-4 h-4 bg-[#27c93f] rounded-full shadow-md"></span>
+          <span
+            className="w-4 h-4 rounded-full shadow-md"
+            style={{ backgroundColor: '#ff5f56' }}
+          ></span>
+          <span
+            className="w-4 h-4 rounded-full shadow-md"
+            style={{ backgroundColor: '#ffbd2e' }}
+          ></span>
+          <span
+            className="w-4 h-4 rounded-full shadow-md"
+            style={{ backgroundColor: '#27c93f' }}
+          ></span>
         </div>
-        <span className="ml-4 font-semibold text-green-100 text-sm select-none">
+        <span className="ml-4 font-semibold text-green-100 text-sm">
           green-terminal — bash
         </span>
-      </div>
+      </header>
 
       {/* Terminal contenu */}
-      <div className="flex flex-1 overflow-hidden">
+      <main className="flex flex-1 overflow-hidden">
         {/* Numéros de ligne (fixés) */}
-        <div
+        <aside
           aria-hidden="true"
-          className="select-none pr-4 pt-6 text-green-300 text-right"
+          className="select-none pr-4 pt-6 text-green-300 text-right font-mono"
           style={{
             width: '3.5rem',
             lineHeight: '1.5rem',
@@ -64,22 +77,22 @@ const Terminal = () => {
               {num}
             </div>
           ))}
-        </div>
+        </aside>
 
         {/* Zone editable */}
-        <div
+        <section
           ref={terminalRef}
           contentEditable
           spellCheck={false}
           suppressContentEditableWarning={true}
-          className="p-6 pt-6 flex-1 leading-6 outline-none whitespace-pre-wrap break-words overflow-auto"
+          className="p-6 pt-6 flex-1 leading-6 outline-none whitespace-pre-wrap break-words overflow-auto font-mono text-base"
           style={{
             caretColor: '#a8f0c6',
-            fontSize: '1rem',
             lineHeight: '1.5rem',
             direction: 'ltr',
             textAlign: 'left',
             minHeight: '450px',
+            userSelect: 'text',
           }}
           onKeyDown={(e) => {
             if (e.key === 'Tab') {
@@ -87,13 +100,15 @@ const Terminal = () => {
               document.execCommand('insertText', false, '  ');
             }
           }}
+          aria-label="Editable terminal input"
+          role="textbox"
         >
           Welcome to Flexmind — your coding playground
-        </div>
-      </div>
+        </section>
+      </main>
 
       {/* Footer */}
-      <div
+      <footer
         className="text-green-200 text-xs px-6 py-1 select-none"
         style={{
           backgroundColor: 'rgba(0,0,0,0.12)',
@@ -102,7 +117,7 @@ const Terminal = () => {
         }}
       >
         green-terminal v1.0 — Ready.
-      </div>
+      </footer>
     </div>
   );
 };

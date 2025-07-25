@@ -9,9 +9,8 @@ const About = () => {
       <div className="max-w-4xl mx-auto text-center">
         {/* Titre : police plus fine, lettre espacées, légère ombre, tracking et line-height */}
         <h1
-          className="text-6xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-          style={{ letterSpacing: "0.1em" }}
-        >
+          className="text-3xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
+          style={{ letterSpacing: "0.1em" }}>
           Who are
           <span className="text-[#12a387] ml-3 glow-text"> we ?</span>
         </h1>
