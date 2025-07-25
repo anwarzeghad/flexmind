@@ -24,6 +24,9 @@
   position: relative;
   overflow: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Pulsation très subtile de l’opacité du motif */
 @keyframes pulseGrid {
