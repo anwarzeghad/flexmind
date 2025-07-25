@@ -7,7 +7,7 @@ const Nav = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-10 left-1/2 transform -translate-x-1/2 w-[95vw] max-w-5xl bg-white/80 backdrop-blur-sm rounded-full shadow-md z-50">
+    <nav className="fixed top-5 md:top-20 left-1/2 transform -translate-x-1/2 w-[95vw] max-w-5xl bg-white/80 backdrop-blur-sm rounded-full shadow-md z-50">
       <div className="flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="h-10 w-auto" />
