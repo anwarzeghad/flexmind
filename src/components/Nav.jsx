@@ -69,7 +69,7 @@ const Nav = () => {
         <a href="#services" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
           Services
         </a>
-         <a href="#services" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
+         <a href="#faq" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
           FAQ
         </a>
         <a href="#contact" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
