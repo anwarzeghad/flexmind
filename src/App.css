@@ -41,6 +41,12 @@ html {
       linear-gradient(90deg, rgba(18, 163, 135, 0.12) 1px, transparent 1px);
   }
 }
+@media (max-width: 640px) {
+  #root {
+    max-width: 100%; /* Prend toute la largeur disponible */
+    padding: 1rem; /* Un peu moins de padding pour gagner de l'espace */
+  }
+}
 
 /* Animation déplacement du motif grille */
 @keyframes moveGrid {
