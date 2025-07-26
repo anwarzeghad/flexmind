@@ -8,15 +8,17 @@ import './App.css'
 import Contact from './pages/Contact';
 import { Scroll } from 'lucide-react'
 import ScrollProgress from './components/ScrollProgress'
+import Faq from './pages/Faq'
 
 function App() {
   return (
     <div id="root">
-      <ScrollProgress/>
+      {/*<ScrollProgress/>*/}
       <Nav/>
       <Home/>
       <About/>
       <Services/>
+      <Faq/>
       <Contact/>
     </div>
   );

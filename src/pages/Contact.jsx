@@ -49,34 +49,34 @@ const icons = {
 
 const Contact = () => {
   return (
-    <footer id="contact" className="bg-gradient-to-t from-[#12a387] to-[#115f5c] text-white py-16 px-8 select-text">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12 md:gap-0">
-        {/* Section Contact Info */}
+    <footer
+      id="contact"
+      className="bg-gradient-to-t from-[#12a387] to-[#115f5c] text-white py-14 px-6 sm:px-10 select-text"
+    >
+      <div className="max-w-5xl mx-auto flex flex-col gap-12 sm:flex-row sm:justify-between sm:items-start sm:gap-0">
+        {/* Texte principal */}
         <div
-          className="text-center md:text-left animate-slide-fade-up"
+          className="text-center sm:text-left animate-slide-fade-up"
           style={{ animationDelay: "100ms" }}
         >
-          <h2 className="text-3xl font-extrabold mb-4 tracking-wider">
-            Contact Us
-          </h2>
-          <p className="text-lg font-light max-w-sm leading-relaxed">
+          <h2 className="text-3xl font-extrabold mb-4 tracking-wide">Contact Us</h2>
+          <p className="text-base sm:text-lg font-light max-w-xs sm:max-w-sm leading-relaxed">
             Questions? Collaborations? Feel free to reach out!
           </p>
         </div>
 
         {/* Coordonnées */}
         <div
-          className="space-y-8 text-center md:text-left animate-slide-fade-up"
+          className="space-y-6 sm:space-y-8 text-center sm:text-left animate-slide-fade-up"
           style={{ animationDelay: "300ms" }}
         >
           {/* Email */}
           <a
             href="mailto:contact@flexmind.agency"
-            className="flex items-center justify-center md:justify-start group cursor-pointer"
-            aria-label="Send Email to contact@flexmind.agency"
+            className="flex items-center justify-center sm:justify-start group"
           >
             {icons.email}
-            <span className="text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
+            <span className="text-base sm:text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
               contact@flexmind.agency
             </span>
           </a>
@@ -86,11 +86,10 @@ const Contact = () => {
             href="https://www.flexmind.agency"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center md:justify-start group cursor-pointer"
-            aria-label="Visit www.flexmind.agency"
+            className="flex items-center justify-center sm:justify-start group"
           >
             {icons.website}
-            <span className="text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
+            <span className="text-base sm:text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
               www.flexmind.agency
             </span>
           </a>
@@ -100,18 +99,18 @@ const Contact = () => {
             href="https://www.instagram.com/flexmind_agency"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center md:justify-start group cursor-pointer"
-            aria-label="Visit Instagram flexmind_agency">
+            className="flex items-center justify-center sm:justify-start group"
+          >
             {icons.instagram}
-            <span className="text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
+            <span className="text-base sm:text-lg font-semibold text-[#a0f0dd] group-hover:text-white transition-colors duration-300 underline">
               @flexmind_agency
             </span>
           </a>
         </div>
       </div>
 
-      {/* Bas du footer */}
-      <div className="mt-16 border-t border-white/20 pt-6 text-center text-sm font-light text-white/80 animate-fade-in">
+      {/* Footer Bas */}
+      <div className="mt-12 border-t border-white/20 pt-5 text-center text-xs sm:text-sm font-light text-white/80 animate-fade-in">
         © {new Date().getFullYear()} FlexMind Agency — All rights reserved.
       </div>
     </footer>

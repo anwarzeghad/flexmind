@@ -17,6 +17,7 @@ const Nav = () => {
           <li className="hover:text-[#12a387]"><a href="#home">Home</a></li>
           <li className="hover:text-[#12a387]"><a href="#about">About</a></li>
           <li className="hover:text-[#12a387]"><a href="#services">Services</a></li>
+          <li className="hover:text-[#12a387]"><a href="#faq">FAQ</a></li>
           <li className="hover:text-[#12a387]"><a href="#contact">Contact</a></li>
         </ul>
 
@@ -67,6 +68,9 @@ const Nav = () => {
         </a>
         <a href="#services" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
           Services
+        </a>
+         <a href="#services" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
+          FAQ
         </a>
         <a href="#contact" onClick={toggleMenu} className="hover:text-[#12a387] px-4 w-full">
           Contact

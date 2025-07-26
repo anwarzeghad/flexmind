@@ -20,13 +20,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="pt-20 px-8 bg-gradient-to-b from-white to-[#e9f9f8] select-text"
+      className="py-20 px-8 bg-gradient-to-b from-white to-[#e9f9f8] select-text"
     >
       <div className="max-w-6xl mx-auto text-center">
         <h1
           className="text-3xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-          style={{ letterSpacing: "0.1em" }}
-        >
+          style={{ letterSpacing: "0.1em" }}>
           More than just
           <span className="text-[#12a387] ml-3 glow-text">a tech project</span>
         </h1>

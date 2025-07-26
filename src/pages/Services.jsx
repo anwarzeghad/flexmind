@@ -30,12 +30,12 @@ const Services = () => {
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* Title */}
-        <h2
+        <h1
           className="text-3xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
           style={{ letterSpacing: "0.05em" }}
         >
           Our <span className="text-[#12a387] ml-2 glow-text">Services</span>
-        </h2>
+        </h1>
 
         {/* Services grid */}
         <div className="grid gap-16 md:grid-cols-3">

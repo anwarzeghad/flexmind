@@ -10,7 +10,7 @@ const Home = () => {
     >
       {/* Texte à gauche */}
       <section className="max-w-lg text-center md:text-left">
-        <h1 className="text-3xl mt-20 md:text-5xl font-extrabold leading-tight mb-8 tracking-wide text-[#115f5c]">
+        <h1 className="text-3xl mt-20 md:text-5xl font-extrabold leading-tight mb-20 tracking-wide text-[#115f5c]">
           <span style={{ whiteSpace: 'nowrap' }}>Your vision.</span>
           <br />
           <span
@@ -35,7 +35,7 @@ const Home = () => {
       </section>
 
       {/* Terminal à droite */}
-      <section className="mt-12 md:mt-0 md:ml-20 flex justify-center w-full md:w-auto">
+      <section className="mt-12 mb-20 md:mb-0 md:mt-0 md:ml-20 flex justify-center w-full md:w-auto">
         <Terminal />
       </section>
     </div>

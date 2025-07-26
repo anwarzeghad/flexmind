@@ -43,7 +43,7 @@ const VerticalProgress = () => {
   };
 
   return (
-    <div className="fixed top-20 left-8 z-50 flex flex-col items-start">
+    <div className="hidden md:flex fixed top-20 left-8 z-50 flex-col items-start">
       {/* Ligne de fond */}
       <div className="relative w-1 bg-gray-300 rounded-full h-[80vh]">
         {/* Ligne de progression */}
