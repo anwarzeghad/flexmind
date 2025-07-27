@@ -1,50 +1,100 @@
-import React from "react";
-import { ShieldCheck, MonitorSmartphone, BarChart2 } from "lucide-react"; // Icons
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { ShieldCheck, MonitorSmartphone, BarChart2 } from "lucide-react";
+
+const cards = [
+  {
+    icon: <MonitorSmartphone size={32} className="text-[#12a387]" />,
+    title: "Smart Digital Experiences",
+    text: "We craft high-performance websites and systems with modern, stylish design and lightning speed to boost your digital presence.",
+  },
+  {
+    icon: <BarChart2 size={32} className="text-[#12a387]" />,
+    title: "Business Tools",
+    text: "FlexMind helps you manage stock, track your projects, and streamline operations with smart tools made for your business.",
+  },
+  {
+    icon: <ShieldCheck size={32} className="text-[#12a387]" />,
+    title: "Secure & Scalable",
+    text: "Security meets scalability. We build reliable platforms that protect your data and grow with your vision.",
+  },
+];
 
 const About = () => {
-  const cards = [
-    {
-      icon: <MonitorSmartphone size={40} className="text-[#12a387]" />,
-      text: "We craft high-performance websites and systems with modern, stylish design and lightning speed to boost your digital presence.",
-    },
-    {
-      icon: <BarChart2 size={40} className="text-[#12a387]" />,
-      text: "FlexMind helps you manage stock, track your projects, and streamline operations with smart tools made for your business.",
-    },
-    {
-      icon: <ShieldCheck size={40} className="text-[#12a387]" />,
-      text: "Security meets scalability. We build reliable platforms that protect your data and grow with your vision.",
-    },
-  ];
+  const [typingKey, setTypingKey] = useState(0);
+  const [showWho, setShowWho] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.6 });
+
+  useEffect(() => {
+    if (isInView) {
+      setTypingKey((prev) => prev + 1);
+      setShowWho(false);
+      setTimeout(() => setShowWho(true), 2000);
+    }
+  }, [isInView]);
 
   return (
     <section
       id="about"
-      className="py-20 px-8 bg-gradient-to-b from-white to-[#e9f9f8] select-text"
+      ref={ref}
+      className="relative bg-gradient-to-b from-white to-[#e9f9f8] py-28 px-6 sm:px-10 select-text"
     >
-      <div className="max-w-6xl mx-auto text-center">
-        <h1
-          className="text-3xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-          style={{ letterSpacing: "0.1em" }}>
-          More than just
-          <span className="text-[#12a387] ml-3 glow-text">a tech project</span>
-        </h1>
+      {/* Titre animé */}
+      <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-20 tracking-wide text-[#115f5c]">
+        <span className="inline-block">
+          <span className="text-[#115f5c]">
+            <Typewriter
+              key={typingKey}
+              words={["Wait a minute..."]}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </span>
+          {showWho && (
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-[#12a387] glow-text ml-2 inline-block"
+            >
+              who are you?
+            </motion.span>
+          )}
+        </span>
+      </h2>
 
-        {/* Cartes responsives */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {cards.map((card, i) => (
-            <div
+      {/* Cartes animées */}
+      <div className="max-w-5xl mx-auto flex flex-col gap-20 relative z-10">
+        {cards.map((card, i) => (
+          <motion.div
             key={i}
-            className="w-full max-w-md mx-auto md:max-w-full md:mx-0 bg-white/90 shadow-lg rounded-2xl p-10 border-l-8 border-[#12a387] transition-transform transform hover:-translate-y-4 hover:scale-[1.05] animate-zoom-fade flex flex-col items-start text-left"
-            style={{ animationDelay: `${(i + 1) * 180}ms` }}>
-
-              <div className="mb-4">{card.icon}</div>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed tracking-wide font-sans">
-                {card.text}
-              </p>
+            initial={{ opacity: 0, y: i % 2 === 0 ? 80 : -80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.3, duration: 0.8 }}
+            viewport={{ once: false, amount: 0.4 }}
+            className={`relative max-w-[85%] p-6 sm:p-8 rounded-2xl shadow-xl bg-white text-left text-[#115f5c] ${
+              i % 2 === 0 ? "self-start ml-2 sm:ml-8" : "self-end mr-2 sm:mr-8"
+            } before:content-[''] before:absolute before:top-4 before:w-4 before:h-4 before:bg-white before:rotate-45 ${
+              i % 2 === 0
+                ? "before:left-[-0.5rem] before:border-l-2"
+                : "before:right-[-0.5rem] before:border-r-2"
+            } before:rounded-sm border border-[#12a387]/40`}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              {card.icon}
+              <h3 className="font-bold text-lg">{card.title}</h3>
             </div>
-          ))}
-        </div>
+            <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+              {card.text}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

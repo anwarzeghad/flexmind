@@ -10,7 +10,7 @@ const Home = () => {
     >
       {/* Texte à gauche */}
       <section className="max-w-lg text-center md:text-left">
-        <h1 className="text-3xl mt-20 md:text-5xl font-extrabold leading-tight mb-20 tracking-wide text-[#115f5c]">
+        <h1 className="text-4xl mt-20 md:text-5xl font-extrabold leading-tight mb-20 tracking-wide text-[#115f5c]">
           <span style={{ whiteSpace: 'nowrap' }}>Your vision.</span>
           <br />
           <span
@@ -29,8 +29,7 @@ const Home = () => {
           </span>
         </h1>
         <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-md mx-auto md:mx-0">
-          We help startups and small businesses transform their ideas into
-          powerful software solutions that drive growth and efficiency.
+          We are here to help you transform your idea or project into a complete software solution, tailored to boost your growth, improve your efficiency, and give you a competitive edge in the digital world.
         </p>
       </section>
 
