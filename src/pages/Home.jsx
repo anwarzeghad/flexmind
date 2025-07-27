@@ -10,7 +10,7 @@ const Home = () => {
     >
       {/* Texte à gauche */}
       <section className="max-w-lg text-center md:text-left">
-        <h1 className="text-4xl py-20 md:text-5xl font-extrabold leading-tight  tracking-wide text-[#115f5c]">
+        <h1 className="text-3xl py-20 md:text-5xl font-extrabold leading-tight  tracking-wide text-[#115f5c]">
           <span style={{ whiteSpace: 'nowrap' }}>Your vision.</span>
           <br />
           <span
