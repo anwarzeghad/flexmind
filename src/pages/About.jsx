@@ -64,7 +64,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-[#12a387] dark:text-[#12a387] glow-text ml-2 inline-block"
             >
-              who are you?
+              who are we?
             </motion.span>
           )}
         </span>
