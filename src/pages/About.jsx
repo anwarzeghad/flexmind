@@ -25,13 +25,14 @@ const About = () => {
   const [typingKey, setTypingKey] = useState(0);
   const [showWho, setShowWho] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.6 });
+  const isInView = useInView(ref, { amount: 0.3 }); // Réduit le seuil pour mobile
 
   useEffect(() => {
     if (isInView) {
       setTypingKey((prev) => prev + 1);
       setShowWho(false);
-      setTimeout(() => setShowWho(true), 2000);
+      const timer = setTimeout(() => setShowWho(true), 2000);
+      return () => clearTimeout(timer); // Nettoyage
     }
   }, [isInView]);
 
@@ -39,11 +40,11 @@ const About = () => {
     <section
       id="about"
       ref={ref}
-      className="relative bg-gradient-to-b from-white to-[#e9f9f8] py-28 px-6 sm:px-10 select-text"
+      className="relative bg-gradient-to-b from-white to-[#e9f9f8] py-20 md:py-28 px-6 sm:px-10 select-text"
     >
       {/* Titre animé */}
-      <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-20 tracking-wide text-[#115f5c]">
-        <span className="inline-block">
+      <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-16 md:mb-20 tracking-wide text-[#115f5c]">
+        <span className="inline-block min-h-[4rem] md:min-h-[6rem]">
           <span className="text-[#115f5c]">
             <Typewriter
               key={typingKey}
@@ -70,27 +71,27 @@ const About = () => {
       </h2>
 
       {/* Cartes animées */}
-      <div className="max-w-5xl mx-auto flex flex-col gap-20 relative z-10">
+      <div className="max-w-5xl mx-auto flex flex-col gap-14 md:gap-20 relative z-10">
         {cards.map((card, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: i % 2 === 0 ? 80 : -80 }}
+            initial={{ opacity: 0, y: i % 2 === 0 ? 40 : -40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.3, duration: 0.8 }}
-            viewport={{ once: false, amount: 0.4 }}
-            className={`relative max-w-[85%] p-6 sm:p-8 rounded-2xl shadow-xl bg-white text-left text-[#115f5c] ${
-              i % 2 === 0 ? "self-start ml-2 sm:ml-8" : "self-end mr-2 sm:mr-8"
-            } before:content-[''] before:absolute before:top-4 before:w-4 before:h-4 before:bg-white before:rotate-45 ${
+            transition={{ delay: i * 0.3, duration: 0.6 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className={`relative w-full max-w-[90%] md:max-w-[85%] p-5 sm:p-8 rounded-2xl shadow-xl bg-white text-left text-[#115f5c] ${
+              i % 2 === 0 ? "self-start" : "self-end"
+            } before:content-[''] before:absolute before:top-4 before:w-3 before:h-3 before:bg-white before:rotate-45 ${
               i % 2 === 0
-                ? "before:left-[-0.5rem] before:border-l-2"
-                : "before:right-[-0.5rem] before:border-r-2"
+                ? "before:left-[-0.4rem] before:border-l-2"
+                : "before:right-[-0.4rem] before:border-r-2"
             } before:rounded-sm border border-[#12a387]/40`}
           >
             <div className="flex items-center gap-3 mb-3">
               {card.icon}
-              <h3 className="font-bold text-lg">{card.title}</h3>
+              <h3 className="font-bold text-base sm:text-lg">{card.title}</h3>
             </div>
-            <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               {card.text}
             </p>
           </motion.div>
