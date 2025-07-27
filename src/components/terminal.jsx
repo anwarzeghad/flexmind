@@ -3,10 +3,6 @@ import React, { useRef, useEffect } from 'react';
 const Terminal = () => {
   const terminalRef = useRef(null);
 
-  useEffect(() => {
-    terminalRef.current?.focus();
-  }, []);
-
   const fixedLineCount = 30;
   const lineNumbers = Array.from({ length: fixedLineCount }, (_, i) => i + 1);
 
