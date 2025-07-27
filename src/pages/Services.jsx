@@ -1,59 +1,109 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaLaptopCode, FaProjectDiagram, FaShieldAlt } from "react-icons/fa";
 
 const services = [
   {
-    icon: <FaLaptopCode size={40} className="text-[#12a387]" />,
+    icon: <FaLaptopCode className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
     title: "Modern Web Design",
-    description:
-      "We build fast, responsive and elegant websites to make your business stand out online with a modern, impactful look.",
+    description: "We craft fast, responsive websites with elegant designs that convert visitors into customers."
   },
   {
-    icon: <FaProjectDiagram size={40} className="text-[#12a387]" />,
+    icon: <FaProjectDiagram className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
     title: "Smart Systems",
-    description:
-      "Automate and simplify your business with custom systems for inventory, project management, and operations.",
+    description: "Custom business solutions to automate workflows and boost productivity."
   },
   {
-    icon: <FaShieldAlt size={40} className="text-[#12a387]" />,
+    icon: <FaShieldAlt className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
     title: "Security & Support",
-    description:
-      "We deliver secure, scalable platforms backed by professional support — your digital partner for the future.",
-  },
+    description: "Enterprise-grade security with proactive monitoring and support."
+  }
 ];
 
 const Services = () => {
-  return (
-    <section
-      id="services"
-      className="py-20 p px-8 bg-gradient-to-b from-[#e9f9f8] to-white select-text"
-    >
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Title */}
-        <h1
-          className="text-4xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-          style={{ letterSpacing: "0.05em" }}
-        >
-          Our <span className="text-[#12a387] ml-2 glow-text">Services</span>
-        </h1>
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
 
-        {/* Services grid */}
-        <div className="grid gap-16 md:grid-cols-3">
-          {services.map((service, i) => (
-            <div
-              key={i}
-              className="w-full max-w-md mx-auto md:max-w-full bg-white/90 shadow-lg rounded-2xl p-10 border-l-8 border-[#12a387] transition-transform transform hover:-translate-y-4 hover:scale-[1.05] animate-zoom-fade text-left"
-              style={{ animationDelay: `${(i + 1) * 180}ms` }}
-            >
-              <div className="mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-semibold text-[#115f5c] mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed tracking-wide text-lg">
-                {service.description}
-              </p>
-            </div>
-          ))}
+  const y1 = useTransform(scrollYProgress, [0, 1], [100, -50]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [150, -30]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [80, -20]);
+  const opacity = useTransform(scrollYProgress, [0.1, 0.3, 0.8], [0, 1, 0.5]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
+
+  return (
+    <section 
+      id="services"
+      ref={ref}
+      className="relative py-32 px-6 sm:px-10 bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+    >
+      {/* Animated background elements */}
+      <motion.div 
+        style={{ y: y1, opacity }}
+        className="absolute left-10 top-1/3 w-64 h-64 rounded-full bg-[#12a387]/10 dark:bg-[#a0f0dd]/10 blur-3xl"
+      />
+      
+      <motion.div 
+        style={{ y: y2, opacity }}
+        className="absolute right-10 bottom-1/4 w-72 h-72 rounded-full bg-[#115f5c]/10 dark:bg-[#0d4d4a]/10 blur-3xl"
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Title with scroll animation */}
+        <motion.div
+          style={{ opacity, scale }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-[#115f5c] dark:text-[#a0f0dd] mb-4">
+            Our Services
+          </h2>
+          <p className="text-lg text-[#115f5c]/80 dark:text-gray-300 max-w-2xl mx-auto">
+            Solutions designed to <span className="text-[#12a387] dark:text-[#12a387] font-medium">elevate</span> your digital presence
+          </p>
+        </motion.div>
+
+        {/* Services cards with scroll-triggered animations */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {services.map((service, i) => {
+            const yCard = useTransform(scrollYProgress, 
+              [0, 0.2 + i * 0.1, 1], 
+              [100, 0, -30]
+            );
+            const opacityCard = useTransform(scrollYProgress, 
+              [0, 0.2 + i * 0.1, 0.9], 
+              [0, 1, 0.7]
+            );
+
+            return (
+              <motion.div
+                key={i}
+                style={{ y: yCard, opacity: opacityCard }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border border-[#12a387]/20 dark:border-[#12a387]/30 transition-all"
+              >
+                <div className="w-16 h-16 rounded-lg bg-[#12a387]/10 dark:bg-[#12a387]/20 flex items-center justify-center mb-6 mx-auto">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-xl font-semibold text-[#115f5c] dark:text-[#a0f0dd] mb-3 text-center">
+                  {service.title}
+                </h3>
+                
+                <p className="text-[#115f5c]/80 dark:text-gray-300 text-center">
+                  {service.description}
+                </p>
+
+                <motion.div
+                  style={{ 
+                    scaleX: useTransform(scrollYProgress, [0.3 + i * 0.1, 0.6 + i * 0.1], [0, 1])
+                  }}
+                  className="h-0.5 bg-[#12a387]/40 dark:bg-[#12a387]/60 mt-6 origin-left"
+                />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

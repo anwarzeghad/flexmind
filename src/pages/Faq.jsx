@@ -23,12 +23,11 @@ const faqData = [
       "Yes, we provide full support after delivery. Our team will accompany you until you are completely satisfied with the final result.",
   },
   {
-    question: "What if I don’t have any visual identity or logo?",
+    question: "What if I don't have any visual identity or logo?",
     answer:
       "No problem! Our creative department will work closely with you to craft a custom visual identity and branding that reflects your vision and goals.",
   },
 ];
-
 
 const Faq = () => {
   const [openIndexes, setOpenIndexes] = useState([]);
@@ -43,8 +42,8 @@ const Faq = () => {
 
   const renderConversation = () => {
     const output = [
-      <div key="intro" className="text-white mb-3">
-        💬 Please click on the question you’re searching an answer for:
+      <div key="intro" className="text-white dark:text-green-200 mb-3">
+        💬 Please click on the question you're searching an answer for:
       </div>,
     ];
 
@@ -53,7 +52,7 @@ const Faq = () => {
         <button
           key={`q-${index}`}
           onClick={() => toggleIndex(index)}
-          className="self-end bg-[#dcf8c6] text-black px-4 py-2 mb-2 rounded-xl text-sm text-right hover:brightness-95 transition"
+          className="self-end bg-[#dcf8c6] dark:bg-green-100 text-black dark:text-gray-800 px-4 py-2 mb-2 rounded-xl text-sm text-right hover:brightness-95 transition"
         >
           {item.question}
         </button>
@@ -67,7 +66,7 @@ const Faq = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.3 }}
-              className="bg-white text-gray-800 px-4 py-2 rounded-xl text-sm mb-3 w-fit max-w-[85%]"
+              className="bg-white dark:bg-gray-100 text-gray-800 dark:text-gray-900 px-4 py-2 rounded-xl text-sm mb-3 w-fit max-w-[85%]"
             >
               {item.answer}
             </motion.div>
@@ -80,15 +79,16 @@ const Faq = () => {
   };
 
   return (
-    <div id="faq" className="py-20 mb-24 px-4">
+    <div id="faq" className="py-20 mb-24 px-4 dark:bg-gray-900">
       <h1
-          className="text-3xl md:text-5xl font-extrabold text-[#115f5c] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-          style={{ letterSpacing: "0.05em" }}>
-          Frequently asked  <span className="text-[#12a387] ml-2 glow-text">questions</span>
-        </h1>
+        className="text-3xl md:text-5xl font-extrabold text-[#115f5c] dark:text-[#a0f0dd] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
+        style={{ letterSpacing: "0.05em" }}
+      >
+        Frequently asked <span className="text-[#12a387] dark:text-[#12a387] ml-2 glow-text">questions</span>
+      </h1>
 
       <div
-        className="rounded-xl shadow-2xl mx-auto select-text max-w-full"
+        className="rounded-xl shadow-2xl mx-auto select-text max-w-full dark:shadow-lg dark:border dark:border-gray-700"
         style={{
           width: '700px',
           maxWidth: '100%',
@@ -116,7 +116,7 @@ const Faq = () => {
             <span className="w-4 h-4 rounded-full" style={{ backgroundColor: '#ffbd2e' }}></span>
             <span className="w-4 h-4 rounded-full" style={{ backgroundColor: '#27c93f' }}></span>
           </div>
-          <span className="ml-4 font-semibold text-green-100 text-sm">
+          <span className="ml-4 font-semibold text-green-100 dark:text-green-200 text-sm">
             flexmind-terminal — bash
           </span>
         </header>
@@ -131,7 +131,7 @@ const Faq = () => {
 
         {/* Footer */}
         <footer
-          className="text-green-200 text-xs px-6 py-1 select-none"
+          className="text-green-200 dark:text-green-300 text-xs px-6 py-1 select-none"
           style={{
             backgroundColor: 'rgba(0,0,0,0.12)',
             borderBottomLeftRadius: '12px',
