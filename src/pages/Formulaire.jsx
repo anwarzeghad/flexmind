@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Mail } from 'lucide-react';
 
@@ -15,6 +15,17 @@ const Formulaire = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    // Empêche le focus automatique et remonte en haut de page
+    window.scrollTo(0, 0);
+    if (formRef.current) {
+      formRef.current.querySelectorAll('input, textarea').forEach(el => {
+        el.blur();
+      });
+    }
+  }, []);
 
   const validate = () => {
     const newErrors = {};
@@ -99,6 +110,7 @@ const Formulaire = () => {
       </div>
 
       <motion.div 
+        ref={formRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
