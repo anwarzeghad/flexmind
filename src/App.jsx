@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import { Scroll } from 'lucide-react'
 import ScrollProgress from './components/ScrollProgress'
 import Faq from './pages/Faq'
+import Formulaire from './pages/formulaire'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <About/>
       <Services/>
       <Faq/>
+      <Formulaire/>
       <Contact/>
     </div>
   );

@@ -80,7 +80,7 @@ const Nav = () => {
 
           {/* Get Started desktop */}
           <a
-            href="#contact"
+            href="#formulaire"
             className="hidden md:inline-block bg-gradient-to-r from-[#115f5c] to-[#12a387] dark:from-[#0d4d4a] dark:to-[#0e8c7a] px-6 py-2 rounded-br-3xl rounded-tl-3xl text-white text-lg shadow-md hover:scale-105 transition-all duration-300"
           >
             Get Started
@@ -134,7 +134,7 @@ const Nav = () => {
           Contact
         </a>
         <a
-          href="#contact"
+          href="#formulaire"
           onClick={toggleMenu}
           className="bg-gradient-to-r from-[#115f5c] to-[#12a387] dark:from-[#0d4d4a] dark:to-[#0e8c7a] px-6 py-2 rounded-br-3xl rounded-tl-3xl text-white shadow-lg hover:scale-105 transition-all mx-4"
         >

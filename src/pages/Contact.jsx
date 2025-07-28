@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Instagram } from 'lucide-react';
+import { Globe } from 'lucide-react'; 
+import { Mail } from 'lucide-react';
 
 const icons = {
   email: (
@@ -104,8 +107,8 @@ const Contact = () => {
               className="flex flex-col items-center group"
             >
               <div className="mb-6 p-4 bg-[#115f5c] dark:bg-[#0d4d4a] rounded-full">
-                {icons.email}
-              </div>
+                <Mail className="text-white" size={24} strokeWidth={1.5} />
+            </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-[#a0f0dd] group-hover:text-white transition-colors duration-300 text-center">
                 contact@flexmind.agency
@@ -125,9 +128,9 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center group"
             >
-              <div className="mb-6 p-4 bg-[#115f5c] dark:bg-[#0d4d4a] rounded-full">
-                {icons.website}
-              </div>
+             <div className="mb-6 p-4 bg-[#115f5c] dark:bg-[#0d4d4a] rounded-full">
+                <Globe className="text-white" size={24} strokeWidth={1.5} />
+            </div>
               <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
               <p className="text-[#a0f0dd] group-hover:text-white transition-colors duration-300 text-center">
                 www.flexmind.agency
@@ -147,9 +150,9 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center group"
             >
-              <div className="mb-6 p-4 bg-[#115f5c] dark:bg-[#0d4d4a] rounded-full">
-                {icons.instagram}
-              </div>
+            <div className="mb-6 p-4 bg-[#115f5c] dark:bg-[#0d4d4a] rounded-full">
+                <Instagram className="text-white" size={24} /> {/* Icône Instagram avec taille et couleur */}
+            </div>
               <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
               <p className="text-[#a0f0dd] group-hover:text-white transition-colors duration-300 text-center">
                 @flexmind_agency

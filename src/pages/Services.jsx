@@ -91,7 +91,7 @@ const Services = () => {
                   {service.title}
                 </h3>
                 
-                <p className="text-[#115f5c]/80 dark:text-gray-300 text-center">
+                <p className="text-[#115f5c]/80 dark:text-gray-300 text-center md:text-xl">
                   {service.description}
                 </p>
 

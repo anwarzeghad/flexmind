@@ -81,7 +81,7 @@ const Faq = () => {
   return (
     <div id="faq" className="py-20 mb-24 px-4 dark:bg-gray-900">
       <h1
-        className="text-3xl md:text-5xl font-extrabold text-[#115f5c] dark:text-[#a0f0dd] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
+        className="text-4xl md:text-5xl font-extrabold text-[#115f5c] dark:text-[#a0f0dd] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
         style={{ letterSpacing: "0.05em" }}
       >
         Frequently asked <span className="text-[#12a387] dark:text-[#12a387] ml-2 glow-text">questions</span>
