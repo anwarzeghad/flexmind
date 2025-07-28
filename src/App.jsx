@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import { Scroll } from 'lucide-react'
 import ScrollProgress from './components/ScrollProgress'
 import Faq from './pages/Faq'
-import Formulaire from './pages/formulaire'
+import Formulaire from './pages/Formulaire'
 
 function App() {
   return (
