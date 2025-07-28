@@ -41,8 +41,9 @@
     animation: 
       bgPulse 18s ease infinite alternate,
       bgFlow 90s linear infinite;
-    
-    &::before {
+  }
+}
+#root::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -54,9 +55,6 @@
       opacity: 0.1;
       z-index: -1;
     }
-  }
-}
-
 @media (max-width: 768px) {
   #root {
     padding: 1rem;
