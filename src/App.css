@@ -1,10 +1,32 @@
 :root {
+  /* Couleurs light mode */
   --primary-color: #12a387;
   --primary-dark: #115f5c;
   --primary-light: #e3f5f1;
   --accent-color: #a0f0dd;
   --grid-color: rgba(18, 163, 135, 0.1);
   --text-color: #2d3748;
+  --bg-base: #ffffff;
+  --bg-secondary: #f0fdfa;
+  
+  /* Couleurs dark mode */
+  --dark-primary: #2dd4bf;
+  --dark-primary-dark: #0d9488;
+  --dark-bg: #0f172a;
+  --dark-bg-secondary: #1e293b;
+  --dark-text: #f8fafc;
+  --dark-grid: rgba(45, 212, 191, 0.1);
+}
+
+.dark {
+  --primary-color: var(--dark-primary);
+  --primary-dark: var(--dark-primary-dark);
+  --primary-light: var(--dark-bg-secondary);
+  --accent-color: #5eead4;
+  --grid-color: var(--dark-grid);
+  --text-color: var(--dark-text);
+  --bg-base: var(--dark-bg);
+  --bg-secondary: var(--dark-bg-secondary);
 }
 
 #root {
@@ -16,104 +38,154 @@
   box-sizing: border-box;
   position: relative;
   overflow-x: clip;
+  color: var(--text-color);
   
-  /* Dégradé simplifié pour mobile */
-  background: 
-    linear-gradient(135deg, #ffffff 0%, var(--primary-light) 100%);
+  /* Dégradé de base plus subtil */
+  background: var(--bg-base);
   
-  /* Motif dynamique allégé */
+  /* Motif dynamique adaptatif */
   background-image: 
-    repeating-linear-gradient(0deg, var(--grid-color), var(--grid-color) 1px, transparent 1px, transparent 40px);
+    repeating-linear-gradient(
+      45deg,
+      var(--grid-color),
+      var(--grid-color) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Animation container - syntaxe corrigée */
+/* Animation container plus subtile */
 #root::before {
   content: '';
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at 20% 30%, var(--accent-color) 0%, transparent 3%),
-    radial-gradient(circle at 80% 70%, var(--accent-color) 0%, transparent 3%);
-  background-size: 300% 300%;
-  animation: particleMove 60s linear infinite;
-  opacity: 0.1;
+    radial-gradient(
+      circle at 20% 30%, 
+      var(--accent-color) 0%, 
+      transparent 15%
+    ),
+    radial-gradient(
+      circle at 80% 70%, 
+      var(--accent-color) 0%, 
+      transparent 15%
+    );
+  background-size: 200% 200%;
+  animation: particleMove 80s linear infinite;
+  opacity: 0.08;
   z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.dark #root::before {
+  opacity: 0.05;
 }
 
 /* Desktop styles */
 @media (min-width: 769px) {
   #root {
+    /* Dégradé plus sophistiqué pour desktop */
     background: 
-      radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.9) 0%, transparent 40%),
-      radial-gradient(ellipse at 80% 80%, var(--primary-light) 0%, transparent 40%),
-      linear-gradient(135deg, #ffffff 0%, var(--primary-light) 100%);
+      radial-gradient(
+        ellipse at 10% 20%,
+        var(--bg-secondary) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 90% 80%,
+        var(--primary-light) 0%,
+        transparent 50%
+      ),
+      var(--bg-base);
     
+    /* Grille plus dense pour desktop */
     background-image: 
-      repeating-linear-gradient(0deg, var(--grid-color), var(--grid-color) 1px, transparent 1px, transparent 40px),
-      repeating-linear-gradient(90deg, var(--grid-color), var(--grid-color) 1px, transparent 1px, transparent 40px);
-    
-    animation: 
-      bgPulse 18s ease infinite alternate,
-      bgFlow 90s linear infinite;
+      repeating-linear-gradient(
+        0deg,
+        var(--grid-color),
+        var(--grid-color) 1px,
+        transparent 1px,
+        transparent 30px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        var(--grid-color),
+        var(--grid-color) 1px,
+        transparent 1px,
+        transparent 30px
+      );
   }
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
   #root {
-    padding: 1rem;
+    padding: 1.5rem;
+    background-size: 60px 60px;
   }
 }
 
-/* Keyframes - ajoutées à la racine */
-@keyframes bgPulse {
-  0% { background-size: 40px 40px, 40px 40px, 80px 80px; }
-  50% { background-size: 45px 45px, 45px 45px, 85px 85px; }
-  100% { background-size: 40px 40px, 40px 40px, 80px 80px; }
-}
-
-@keyframes bgFlow {
-  0% { background-position: 0 0, 0 0, 0 0; }
-  100% { background-position: 80px 80px, 80px 80px, 160px 160px; }
-}
-
+/* Keyframes plus douces */
 @keyframes particleMove {
   0% { background-position: 0% 0%; }
   50% { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
 }
 
-/* Scroll amélioré */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Scrollbar seulement sur desktop */
+/* Scrollbar adaptative */
 @media (min-width: 769px) {
   html::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
   
   html::-webkit-scrollbar-track {
-    background: var(--primary-light);
+    background: var(--bg-secondary);
   }
   
   html::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 10px;
+    border: 2px solid var(--bg-secondary);
+  }
+  
+  .dark html::-webkit-scrollbar-thumb {
+    background: var(--dark-primary);
   }
 }
 
-/* Correction pour les cartes - syntaxe corrigée */
+/* Cartes adaptatives */
 .card {
   padding: 1.5em;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .card {
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 769px) {
   .card {
-    padding: 2.75em;
+    padding: 2em;
   }
+}
+
+/* Transition globale */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-overflow-scrolling: touch;
+  transition: background-color 0.5s ease;
+}
+
+body {
+  background: var(--bg-base);
+  transition: background-color 0.3s ease;
 }

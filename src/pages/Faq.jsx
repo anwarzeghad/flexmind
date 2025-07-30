@@ -56,7 +56,7 @@ const Faq = () => {
   };
 
   return (
-    <div id="faq" className="py-32 px-4 dark:bg-gray-900">
+    <div id="faq" className="relative bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800 py-32 px-6 sm:px-10 select-text">
       <h1
         className="text-4xl md:text-5xl font-extrabold text-[#115f5c] dark:text-[#a0f0dd] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
         style={{ letterSpacing: '0.05em' }}
