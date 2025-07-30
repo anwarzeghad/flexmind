@@ -59,7 +59,8 @@
   },
 
     "faq": {
-    "title": "Frequently asked questions",
+    "title1": "Frequently",
+    "title2": "asked questions",
     "intro": "💬 Please click on the question you're searching an answer for:",
     "questions": [
       {

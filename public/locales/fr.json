@@ -59,7 +59,8 @@
   },
 
     "faq": {
-    "title": "Questions fréquemment posées",
+    "title1": "Questions",
+    "title2": "fréquemment posées",
     "intro": "💬 Cliquez sur la question pour voir la réponse :",
     "questions": [
       {
