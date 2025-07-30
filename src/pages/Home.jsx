@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Typewriter } from 'react-simple-typewriter';
-import Terminal from '../components/Terminal';
+import Terminal from '../components/terminal'
 
 const Home = () => {
   const { t, i18n } = useTranslation();
