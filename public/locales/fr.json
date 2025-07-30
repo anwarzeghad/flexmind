@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "getStarted": "Commencer"
+  },
+  
+  "home": {
+    "title_part1": "Votre vision.",
+    "title_part2": "Notre mission",
+    "description": "Nous sommes là pour vous aider à transformer votre idée ou projet en une solution logicielle complète, conçue pour stimuler votre croissance, améliorer votre efficacité et vous donner un avantage concurrentiel dans le monde numérique."
+  },
+
+  "terminal": {
+    "ariaLabel": "Terminal de codage interactif",
+    "title": "green-terminal — bash",
+    "editableAreaAriaLabel": "Zone de saisie du terminal",
+    "welcomeMessage": "Bienvenue sur Flexmind — votre terrain de jeu de codage",
+    "footer": "green-terminal v1.0 — Prêt."
+  },
+  
+  "about": {
+    "typewriterWords": ["Attendez une minute..."],
+    "whoAreWe": "qui sommes-nous ?",
+    "cards": [
+      {
+        "title": "Expériences numériques intelligentes",
+        "text": "Nous créons des sites web et systèmes performants avec un design moderne et élégant, ainsi qu’une rapidité éclair pour booster votre présence digitale."
+      },
+      {
+        "title": "Outils pour votre entreprise",
+        "text": "FlexMind vous aide à gérer vos stocks, suivre vos projets et optimiser vos opérations grâce à des outils intelligents conçus pour votre business."
+      },
+      {
+        "title": "Sécurisé & évolutif",
+        "text": "La sécurité rencontre l’évolutivité. Nous construisons des plateformes fiables qui protègent vos données et grandissent avec votre vision."
+      }
+    ]
+  },
+
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions conçues pour propulser votre présence digitale",
+    "card1": {
+      "title": "Conception Web Moderne",
+      "description": "Nous créons des sites rapides, réactifs et élégants qui transforment les visiteurs en clients."
+    },
+    "card2": {
+      "title": "Systèmes Intelligents",
+      "description": "Des solutions métier personnalisées pour automatiser les processus et améliorer la productivité."
+    },
+    "card3": {
+      "title": "Sécurité & Support",
+      "description": "Sécurité de niveau entreprise avec surveillance proactive et assistance continue."
+    }
+  },
+
+    "faq": {
+    "title": "Questions fréquemment posées",
+    "intro": "💬 Cliquez sur la question pour voir la réponse :",
+    "questions": [
+      {
+        "question": "Comment pouvons-nous collaborer avec vous ?",
+        "answer": "Vous pouvez nous contacter par e-mail à contact@flexmind.agency ou via Instagram @flexmind_agency. Nous proposerons une réunion à distance ou en présentiel, ou un échange par appel ou messagerie selon votre préférence."
+      },
+      {
+        "question": "Quel est le délai moyen de livraison d'un projet ?",
+        "answer": "Le délai dépend de la complexité du projet. Cependant, la plupart de nos projets sont livrés en 1 à 4 semaines."
+      },
+      {
+        "question": "Combien coûte un projet ?",
+        "answer": "Nos tarifs dépendent de la complexité de votre projet et de la taille de votre entreprise. Le prix final est toujours discuté avec notre équipe commerciale."
+      },
+      {
+        "question": "Proposez-vous un service après-vente ?",
+        "answer": "Oui, nous assurons un suivi complet après livraison. Notre équipe reste à vos côtés jusqu'à ce que vous soyez pleinement satisfait."
+      },
+      {
+        "question": "Et si je n'ai pas d'identité visuelle ou de logo ?",
+        "answer": "Aucun souci ! Notre pôle créatif travaillera avec vous pour concevoir une identité visuelle et un branding qui reflètent votre vision."
+      },
+      {
+        "question": "Pourquoi vous choisir vous plutôt qu'une autre agence ?",
+        "answer": "Chez Flexmind, nous misons sur la rapidité, la fiabilité et la disponibilité. Nous livrons dans des délais courts, restons en contact constant avec nos clients, et nous adaptons à leurs besoins. Votre satisfaction est notre priorité."
+      }
+    ],
+    "footer": "flexmind-terminal v1.0 — Prêt."
+  },
+
+
+    "form": {
+    "titleStart": "N'hésitez pas à nous",
+    "titleHighlight": "contacter",
+    "subtitle": "Transformons vos idées en expériences numériques exceptionnelles.",
+    "getInTouch": "Prendre contact",
+    "lastName": "Nom",
+    "firstName": "Prénom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Objet",
+    "message": "Message",
+    "placeholderLastName": "Entrez votre nom",
+    "placeholderFirstName": "Entrez votre prénom",
+    "placeholderEmail": "exemple@domaine.com",
+    "placeholderPhone": "Votre numéro de téléphone (optionnel)",
+    "placeholderSubject": "Sujet de votre message",
+    "placeholderMessage": "Votre message (au moins 20 caractères)",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successMessage": "Merci de nous'avoir contacté. On vous répondrai dès que possible."
+  },
+  "errors": {
+    "nom": "Le nom est obligatoire.",
+    "prenom": "Le prénom est obligatoire.",
+    "emailRequired": "L'email est obligatoire.",
+    "emailInvalid": "Veuillez entrer une adresse email valide.",
+    "objet": "L'objet est obligatoire.",
+    "messageTooShort": "Le message doit contenir au moins 20 caractères.",
+    "submissionError": "Une erreur est survenue lors de l'envoi. Veuillez réessayer."
+  },
+
+  "contact": {
+    "title": "Entrons en contact",
+    "subtitle": "Prêt à démarrer votre projet ? Contactez-nous dès aujourd'hui pour une consultation gratuite.",
+    "email": {
+      "title": "Envoyez-nous un email",
+      "text": "contact@flexmind.agency"
+    },
+    "website": {
+      "title": "Visitez notre site",
+      "text": "www.flexmind.agency"
+    },
+    "instagram": {
+      "title": "Suivez-nous",
+      "text": "@flexmind_agency"
+    },
+    "footer": "© {{year}} FlexMind Agency. Tous droits réservés."
+  }
+
+}

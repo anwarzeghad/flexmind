@@ -1,26 +1,10 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaLaptopCode, FaProjectDiagram, FaShieldAlt } from "react-icons/fa";
-
-const services = [
-  {
-    icon: <FaLaptopCode className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
-    title: "Modern Web Design",
-    description: "We craft fast, responsive websites with elegant designs that convert visitors into customers."
-  },
-  {
-    icon: <FaProjectDiagram className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
-    title: "Smart Systems",
-    description: "Custom business solutions to automate workflows and boost productivity."
-  },
-  {
-    icon: <FaShieldAlt className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
-    title: "Security & Support",
-    description: "Enterprise-grade security with proactive monitoring and support."
-  }
-];
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,13 +17,30 @@ const Services = () => {
   const opacity = useTransform(scrollYProgress, [0.1, 0.3, 0.8], [0, 1, 0.5]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
 
+  const services = [
+    {
+      icon: <FaLaptopCode className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
+      title: t("services.card1.title"),
+      description: t("services.card1.description")
+    },
+    {
+      icon: <FaProjectDiagram className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
+      title: t("services.card2.title"),
+      description: t("services.card2.description")
+    },
+    {
+      icon: <FaShieldAlt className="text-[#12a387] dark:text-[#a0f0dd] text-3xl" />,
+      title: t("services.card3.title"),
+      description: t("services.card3.description")
+    }
+  ];
+
   return (
     <section 
       id="services"
       ref={ref}
       className="relative py-32 px-6 sm:px-10 bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800 overflow-hidden"
     >
-      {/* Animated background elements */}
       <motion.div 
         style={{ y: y1, opacity }}
         className="absolute left-10 top-1/3 w-64 h-64 rounded-full bg-[#12a387]/10 dark:bg-[#a0f0dd]/10 blur-3xl"
@@ -51,20 +52,18 @@ const Services = () => {
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Title with scroll animation */}
         <motion.div
           style={{ opacity, scale }}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#115f5c] dark:text-[#a0f0dd] mb-4">
-            Our Services
+            {t("services.title")}
           </h2>
           <p className="text-lg text-[#115f5c]/80 dark:text-gray-300 max-w-2xl mx-auto">
-            Solutions designed to <span className="text-[#12a387] dark:text-[#12a387] font-medium">elevate</span> your digital presence
+            {t("services.subtitle")}
           </p>
         </motion.div>
 
-        {/* Services cards with scroll-triggered animations */}
         <div className="grid gap-8 md:grid-cols-3">
           {services.map((service, i) => {
             const yCard = useTransform(scrollYProgress, 

@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+
+  "home": {
+    "title_part1": "Your vision.",
+    "title_part2": "Our mission",
+    "description": "We are here to help you transform your idea or project into a complete software solution, tailored to boost your growth, improve your efficiency, and give you a competitive edge in the digital world."
+  },
+
+  "terminal": {
+    "ariaLabel": "Interactive coding terminal",
+    "title": "green-terminal — bash",
+    "editableAreaAriaLabel": "Editable terminal input",
+    "welcomeMessage": "Welcome to Flexmind — your coding playground",
+    "footer": "green-terminal v1.0 — Ready."
+  },
+
+  "about": {
+    "typewriterWords": ["Wait a minute..."],
+    "whoAreWe": "who are we?",
+    "cards": [
+      {
+        "title": "Smart Digital Experiences",
+        "text": "We craft high-performance websites and systems with modern, stylish design and lightning speed to boost your digital presence."
+      },
+      {
+        "title": "Business Tools",
+        "text": "FlexMind helps you manage stock, track your projects, and streamline operations with smart tools made for your business."
+      },
+      {
+        "title": "Secure & Scalable",
+        "text": "Security meets scalability. We build reliable platforms that protect your data and grow with your vision."
+      }
+    ]
+  },
+
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Solutions designed to elevate your digital presence",
+    "card1": {
+      "title": "Modern Web Design",
+      "description": "We craft fast, responsive websites with elegant designs that convert visitors into customers."
+    },
+    "card2": {
+      "title": "Smart Systems",
+      "description": "Custom business solutions to automate workflows and boost productivity."
+    },
+    "card3": {
+      "title": "Security & Support",
+      "description": "Enterprise-grade security with proactive monitoring and support."
+    }
+  },
+
+    "faq": {
+    "title": "Frequently asked questions",
+    "intro": "💬 Please click on the question you're searching an answer for:",
+    "questions": [
+      {
+        "question": "How can we collaborate with you?",
+        "answer": "You can contact us via email at contact@flexmind.agency or through Instagram at @flexmind_agency. We will suggest a remote or in-person meeting, or connect via call or messaging based on your preference."
+      },
+      {
+        "question": "What is the average project delivery time?",
+        "answer": "Project delivery time depends on its complexity. However, most of our projects are delivered within 1 to 4 weeks."
+      },
+      {
+        "question": "How much does a project cost?",
+        "answer": "Our pricing depends on the complexity of your project and the size of your company. Final pricing is always discussed and agreed upon with our sales team."
+      },
+      {
+        "question": "Do you offer after-sales support?",
+        "answer": "Yes, we provide full support after delivery. Our team will accompany you until you are completely satisfied with the final result."
+      },
+      {
+        "question": "What if I don't have any visual identity or logo?",
+        "answer": "No problem! Our creative department will work closely with you to craft a custom visual identity and branding that reflects your vision and goals."
+      },
+      {
+        "question": "Why should we choose you and not another company?",
+        "answer": "At Flexmind, we pride ourselves on our speed, reliability, and availability. We deliver high-quality work within short deadlines, maintain constant communication with our clients, and are always ready to adapt to your needs. Your satisfaction is our priority."
+      }
+    ],
+    "footer": "flexmind-terminal v1.0 — Ready."
+  },
+
+    "form": {
+    "titleStart": "Feel free to",
+    "titleHighlight": "contact us",
+    "subtitle": "Let's transform your ideas into exceptional digital experiences",
+    "getInTouch": "Get in touch",
+    "lastName": "Last Name",
+    "firstName": "First Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "placeholderLastName": "Enter your last name",
+    "placeholderFirstName": "Enter your first name",
+    "placeholderEmail": "example@domain.com",
+    "placeholderPhone": "Your phone number (optional)",
+    "placeholderSubject": "Subject of your message",
+    "placeholderMessage": "Your message (at least 20 characters)",
+    "send": "Send",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for contacting us. We'll reply as soon as possible."
+  },
+  "errors": {
+    "nom": "Last name is required.",
+    "prenom": "First name is required.",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "objet": "Subject is required.",
+    "messageTooShort": "Message must be at least 20 characters long.",
+    "submissionError": "An error occurred while sending. Please try again."
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to start your project? Contact us today for a free consultation.",
+    "email": {
+      "title": "Email Us",
+      "text": "contact@flexmind.agency"
+    },
+    "website": {
+      "title": "Visit Us",
+      "text": "www.flexmind.agency"
+    },
+    "instagram": {
+      "title": "Follow Us",
+      "text": "@flexmind_agency"
+    },
+    "footer": "© {{year}} FlexMind Agency. All rights reserved."
+  }
+
+}

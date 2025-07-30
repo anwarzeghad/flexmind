@@ -1,36 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const faqData = [
-  {
-    question: "How can we collaborate with you?",
-    answer:
-      "You can contact us via email at contact@flexmind.agency or through Instagram at @flexmind_agency. We will suggest a remote or in-person meeting, or connect via call or messaging based on your preference.",
-  },
-  {
-    question: "What is the average project delivery time?",
-    answer:
-      "Project delivery time depends on its complexity. However, most of our projects are delivered within 1 to 4 weeks.",
-  },
-  {
-    question: "How much does a project cost?",
-    answer:
-      "Our pricing depends on the complexity of your project and the size of your company. Final pricing is always discussed and agreed upon with our sales team.",
-  },
-  {
-    question: "Do you offer after-sales support?",
-    answer:
-      "Yes, we provide full support after delivery. Our team will accompany you until you are completely satisfied with the final result.",
-  },
-  {
-    question: "What if I don't have any visual identity or logo?",
-    answer:
-      "No problem! Our creative department will work closely with you to craft a custom visual identity and branding that reflects your vision and goals.",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Faq = () => {
+  const { t } = useTranslation();
   const [openIndexes, setOpenIndexes] = useState([]);
+
+  // Récupération dynamique des questions dans le fichier JSON
+  const faqData = t('faq.questions', { returnObjects: true });
 
   const toggleIndex = (index) => {
     if (openIndexes.includes(index)) {
@@ -43,7 +20,7 @@ const Faq = () => {
   const renderConversation = () => {
     const output = [
       <div key="intro" className="text-white dark:text-green-200 mb-3">
-        💬 Please click on the question you're searching an answer for:
+        {t('faq.intro')}
       </div>,
     ];
 
@@ -82,9 +59,12 @@ const Faq = () => {
     <div id="faq" className="py-20 mb-24 px-4 dark:bg-gray-900">
       <h1
         className="text-4xl md:text-5xl font-extrabold text-[#115f5c] dark:text-[#a0f0dd] mb-24 tracking-wide leading-tight relative inline-block slide-fade-glow"
-        style={{ letterSpacing: "0.05em" }}
+        style={{ letterSpacing: '0.05em' }}
       >
-        Frequently asked <span className="text-[#12a387] dark:text-[#12a387] ml-2 glow-text">questions</span>
+        {t('faq.title')}{' '}
+        <span className="text-[#12a387] dark:text-[#12a387] ml-2 glow-text">
+          {t('faq.title').split(' ')[1]}
+        </span>
       </h1>
 
       <div
@@ -138,7 +118,7 @@ const Faq = () => {
             borderBottomRightRadius: '12px',
           }}
         >
-          flexmind-terminal v1.0 — Ready.
+          {t('faq.footer')}
         </footer>
       </div>
     </div>

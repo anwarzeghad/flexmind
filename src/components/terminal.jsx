@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Terminal = () => {
   const terminalRef = useRef(null);
+  const { t } = useTranslation();
 
   const fixedLineCount = 30;
   const lineNumbers = Array.from({ length: fixedLineCount }, (_, i) => i + 1);
@@ -23,7 +25,7 @@ const Terminal = () => {
         flexDirection: 'column',
       }}
       role="region"
-      aria-label="Interactive coding terminal"
+      aria-label={t('terminal.ariaLabel')}
       tabIndex={-1}
     >
       {/* Barre titre */}
@@ -50,7 +52,7 @@ const Terminal = () => {
           ></span>
         </div>
         <span className="ml-4 font-semibold text-green-100 text-sm">
-          green-terminal — bash
+          {t('terminal.title')}
         </span>
       </header>
 
@@ -96,10 +98,10 @@ const Terminal = () => {
               document.execCommand('insertText', false, '  ');
             }
           }}
-          aria-label="Editable terminal input"
+          aria-label={t('terminal.editableAreaAriaLabel')}
           role="textbox"
         >
-          Welcome to Flexmind — your coding playground
+          {t('terminal.welcomeMessage')}
         </section>
       </main>
 
@@ -112,7 +114,7 @@ const Terminal = () => {
           borderBottomRightRadius: '12px',
         }}
       >
-        green-terminal v1.0 — Ready.
+        {t('terminal.footer')}
       </footer>
     </div>
   );
