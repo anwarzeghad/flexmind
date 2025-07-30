@@ -37,7 +37,7 @@ const About = () => {
     <section
       id="about"
       ref={ref}
-      className="relative bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800 py-20 md:py-28 px-6 sm:px-10 select-text"
+      className="relative bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800 py-32 px-6 sm:px-10 select-text"
     >
       <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-16 md:mb-20 tracking-wide text-[#115f5c] dark:text-[#a0f0dd]">
         <span className="inline-block min-h-[4rem] md:min-h-[6rem]">

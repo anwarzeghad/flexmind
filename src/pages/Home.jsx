@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-16 bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pb-28  md:px-16 bg-gradient-to-b from-white to-[#e9f9f8] dark:from-gray-900 dark:to-gray-800"
     >
       {/* Texte à gauche */}
       <section className="max-w-lg text-center md:text-left">
