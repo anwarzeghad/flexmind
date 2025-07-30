@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-t from-[#12a387] to-[#115f5c] dark:from-[#0d4d4a] dark:to-[#093a38] text-white py-20 px-6 sm:px-10"
+      className="bg-gradient-to-t from-[#12a387] to-[#115f5c] dark:from-[#0d4d4a] dark:to-[#093a38] text-white py-32 px-6 sm:px-10"
     >
       <motion.div
         initial="hidden"
